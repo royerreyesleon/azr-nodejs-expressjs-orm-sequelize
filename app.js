@@ -1,28 +1,25 @@
 const express = require('express')
 const app = express();
 const sequelize = require('./database/db');
-const User = require('./database/models/Users');
+// const User = require('./database/models/Users');
 
 // CONFIGURACION
-const port = process.env.PORT || 3006
+const port = process.env.PORT || 3006;
+
+
+// MIDDLEWARE
+app.use(express.json()); // PARA PODER RECIBIR DATOS EN FORMATO JSON.
+app.use(express.urlencoded({extended:false})); // PARA PODER PASAR DATOS LIVIANOS.
 
 
 
 // RUTAS
-app.get('/insertar' , (req , res)=>{
-   User.create({
-       name:"Royer",
-       birthday: new Date(1997, 11, 16)
-   }).then(user => {
-       res.json(user);
-   });
-})
+app.get('/' , (req , res)=>{
+   res.json("Hola mundo");
+});
 
-app.get('/listar' , (req , res)=>{
-    User.findAll().then(users => {
-        res.json(users);
-    });
- })
+app.use('/api/posts', require('./routes/posts'));
+
 
 
 
