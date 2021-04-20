@@ -6,7 +6,7 @@ class Post extends Model {}
 Post.init({
   // ATRIBUTOS
   title: DataTypes.STRING,
-  body: DataTypes.TEXT,
+  description: DataTypes.TEXT,
 }, {
     sequelize,
     modelName: 'post' // TABLA DE BD.

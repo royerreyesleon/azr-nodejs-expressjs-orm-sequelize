@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>nodejs-expressjs-orm-sequelize</title>
+  </head>
+  <body>
+
+    <div class="container mt-5 pt-5">
+      <h1 class="text-center text-uppercase">nodejs-expressjs-orm-sequelize</h1>
+
+      <div class="text-center">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-success btnCrear">
+          Crear
+        </button>
+      </div>
+
+      <br>
+
+      <!-- TABLA DE DATOS -->
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Título</th>
+              <th>Descripción</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          
+          <tbody id="listado">
+            
+          </tbody>
+
+        </table>
+      </div>
+
+
+      <hr>
+
+      
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+
+    <!-- JQUERY -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <!-- POPPER -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <!-- MI SCRIPT -->
+    <script src="./index.js"></script>
+  </body>
+</html>
+
+
+
+
+<!-- MODAL -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal_titulo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        
+      <form id="frm">
+      
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal_titulo">Crear</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          
+        	<div class="form-group">
+	        	<input type="text" id="frm_id" class="form-control" placeholder="Id del registro" readonly="">
+        	</div>
+
+        	<div class="form-group">
+	            <label>Título</label>
+	            <input type="text" id="frm_title" name="title" class="form-control" placeholder="Escribe..." required>
+        	</div>
+
+        	<div class="form-group">
+	            <label>Descripción</label>
+	            <textarea id="frm_description" name="description" class="form-control" placeholder="Escribe..." required></textarea>
+        	</div>
+            
+        </div>
+
+        <div class="modal-footer">
+          
+          <button type="submit" class="btn btn-sm btn-success" id="frm_btn">Crear</button>
+          <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cerrar</button>
+
+        </div>
+          
+      </form>
+
+    </div>
+  </div>
+</div>

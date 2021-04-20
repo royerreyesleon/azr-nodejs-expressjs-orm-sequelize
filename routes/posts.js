@@ -38,14 +38,14 @@ http://localhost:3006/api/posts
 Content-Type application/json
 {
     "title" : "Nuevo 2",
-    "body": "Nuevo desde post 2"
+    "description": "Nuevo desde post 2"
 }
 */
 router.post('/' , (req , res)=>{
 
     Post.create({
         title: req.body.title,
-        body: req.body.body
+        description: req.body.description
     }).then(post => {
         res.json(post);
     }).catch(error => {
@@ -63,14 +63,14 @@ http://localhost:3006/api/posts/1
 Content-Type application/json
 {
     "title" : "Nuevo 2",
-    "body": "Nuevo desde post 2"
+    "description": "Nuevo desde post 2"
 }
 */
 router.patch('/:id' , (req , res)=>{
 
     Post.update({
         title: req.body.title,
-        body: req.body.body
+        description: req.body.description
     },{
         where: {
             id: req.params.id
